@@ -16,6 +16,7 @@ with pkgs; [
   pandoc
   ripgrep
   rustup
+  texliveFull
   wget
   zoxide
 
