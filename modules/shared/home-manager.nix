@@ -1,7 +1,9 @@
 { user, config, pkgs, lib, ... }:
 
-let name = "Max Glass";
-    email = "glassmax13@gmail.com"; in
+let
+  name = "Max Glass";
+  email = "glassmax13@gmail.com";
+in
 {
 
   starship = import ./starship.nix { inherit lib; };

@@ -1,4 +1,3 @@
-
 { homeDirectory, stateVersion, user, ... }:
 { lib, pkgs, config, ... }:
 

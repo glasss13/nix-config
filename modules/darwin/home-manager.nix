@@ -17,7 +17,7 @@ in
 
   homebrew = {
     enable = true;
-    casks = pkgs.callPackage ./casks.nix {};
+    casks = pkgs.callPackage ./casks.nix { };
     onActivation.cleanup = "uninstall";
 
     # These app IDs are from using the mas CLI app
@@ -39,17 +39,17 @@ in
   # Enable home-manager
   home-manager = {
     useGlobalPkgs = true;
-    users.${user} = { pkgs, config, lib, ... }:{
+    users.${user} = { pkgs, config, lib, ... }: {
       home = {
         enableNixpkgsReleaseCheck = false;
-        packages = pkgs.callPackage ./packages.nix {};
+        packages = pkgs.callPackage ./packages.nix { };
         file = lib.mkMerge [
           sharedFiles
           additionalFiles
         ];
         inherit stateVersion;
       };
-      programs = {} // import ../shared/home-manager.nix { inherit user config pkgs lib; };
+      programs = { } // import ../shared/home-manager.nix { inherit user config pkgs lib; };
 
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344

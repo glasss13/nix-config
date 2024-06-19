@@ -8,13 +8,13 @@ in
   home = {
     enableNixpkgsReleaseCheck = false;
     username = "${user}";
-    packages = pkgs.callPackage ./packages.nix {};
+    packages = pkgs.callPackage ./packages.nix { };
     file = shared-files // import ./files.nix { inherit user homeDirectory config pkgs; };
     inherit homeDirectory;
     inherit stateVersion;
   };
 
-  programs = shared-programs // {};
+  programs = shared-programs // { };
 
 }
 

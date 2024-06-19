@@ -21,6 +21,7 @@ return {
                 "clangd",
                 "gopls",
                 "pylsp",
+                "rnix",
             },
             automatic_installation = true,
             handlers = {

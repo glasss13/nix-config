@@ -1,11 +1,11 @@
-{ lib, pkgs, ...}:
+{ lib, pkgs, ... }:
 
 {
   enable = true;
   settings = {
     shell = {
       program = "/bin/zsh";
-      args = ["-l"];
+      args = [ "-l" ];
     };
     cursor = {
       style = "Block";
@@ -27,7 +27,7 @@
       };
       size = lib.mkMerge [
         (lib.mkIf pkgs.stdenv.hostPlatform.isLinux 10)
-          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 14)
+        (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 14)
       ];
     };
 

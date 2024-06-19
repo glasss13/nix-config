@@ -1,4 +1,4 @@
-{ name, email, ...}:
+{ name, email, ... }:
 
 {
   enable = true;
@@ -18,7 +18,7 @@
   };
   ignores = [
     ".vscode"
-      ".tool-versions"
-      ".DS_Store"
+    ".tool-versions"
+    ".DS_Store"
   ];
 }

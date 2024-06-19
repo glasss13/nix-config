@@ -38,7 +38,7 @@
     {
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
-      darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system: 
+      darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system:
         let
           homeDirectory = "/Users/${user}";
         in
@@ -59,7 +59,7 @@
                 };
                 autoMigrate = true;
               };
-           } 
+            }
             (import ./hosts/darwin { inherit homeDirectory stateVersion user; })
           ];
         }
@@ -77,7 +77,7 @@
           ];
         }
       );
-  };
+    };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
