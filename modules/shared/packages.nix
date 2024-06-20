@@ -4,15 +4,16 @@ with pkgs; [
   alacritty
 
   coreutils
+  eza
   tree
   zip
-  eza
 
   bat
   delta
   fd
   ffmpeg
   fzf
+  opam
   pandoc
   ripgrep
   rustup
