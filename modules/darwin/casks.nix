@@ -3,7 +3,6 @@ _:
 [
   "homebrew/cask/docker"
   "visual-studio-code"
-  "iterm2"
 
   "discord"
   "slack"

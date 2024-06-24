@@ -3,16 +3,21 @@
 with pkgs; [
   alacritty
 
+  cmake
+  conan
   coreutils
   eza
   tree
   zip
 
+
   bat
+  bun
   delta
   fd
   ffmpeg
   fzf
+  go-task
   opam
   pandoc
   ripgrep
@@ -20,8 +25,7 @@ with pkgs; [
   texliveFull
   wget
   zoxide
-
-  neovim
+  zsh
   tmux
 
   btop
