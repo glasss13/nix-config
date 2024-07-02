@@ -3,6 +3,8 @@ _:
 [
   "homebrew/cask/docker"
   "visual-studio-code"
+  "jetbrains-toolbox"
+  "beekeeper-studio"
 
   "discord"
   "slack"

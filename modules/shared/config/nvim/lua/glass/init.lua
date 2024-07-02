@@ -2,6 +2,7 @@ require("glass.remap")
 require("glass.set")
 
 require("glass.lazy_init")
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
@@ -21,5 +22,37 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    end,
+})
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
+
+-- auto close
+local function is_modified_buffer_open(buffers)
+    for _, v in pairs(buffers) do
+        if v.name:match 'NvimTree_' == nil then
+            return true
+        end
+    end
+    return false
+end
+
+vim.api.nvim_create_autocmd('BufEnter', {
+    nested = true,
+    callback = function()
+        if
+            #vim.api.nvim_list_wins() == 1
+            and vim.api.nvim_buf_get_name(0):match 'NvimTree_' ~= nil
+            and is_modified_buffer_open(vim.fn.getbufinfo { bufmodified = 1 }) == false
+        then
+            vim.cmd 'quit'
+        end
     end,
 })

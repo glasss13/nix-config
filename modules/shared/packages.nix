@@ -1,35 +1,32 @@
 { pkgs }:
 
 with pkgs; [
-  alacritty
 
+  alacritty
+  bat
+  btop
+  bun
   cmake
   conan
   coreutils
-  eza
-  tree
-  zip
-
-
-  bat
-  bun
   delta
+  eza
   fd
   ffmpeg
+  fira-code-nerdfont
   fzf
   go-task
+  neofetch
+  nodejs_22
   opam
   pandoc
   ripgrep
   rustup
   texliveFull
+  tmux
+  tree
   wget
+  zip
   zoxide
   zsh
-  tmux
-
-  btop
-  neofetch
-
-  fira-code-nerdfont
 ]
