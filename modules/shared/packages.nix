@@ -8,7 +8,7 @@ with pkgs; [
   bun
   cmake
   conan
-  coreutils
+  # coreutils
   delta
   eza
   fd

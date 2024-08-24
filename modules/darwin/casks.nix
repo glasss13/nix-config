@@ -7,9 +7,11 @@ _:
   "beekeeper-studio"
 
   "discord"
+  "garmin-express"
   "slack"
-  "zoom"
   "whatsapp"
+  "zoom"
+  "zwift"
 
   "alt-tab"
   "raycast"
