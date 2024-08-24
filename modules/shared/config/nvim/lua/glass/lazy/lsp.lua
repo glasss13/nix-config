@@ -28,6 +28,19 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {}
                 end,
+                ["clangd"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.clangd.setup {
+                        cmd = {
+                            "clangd",
+                            "--background-index",
+                            "--clang-tidy",
+                            "--cross-file-rename",
+                            "--completion-style=detailed",
+                            "--header-insertion=iwyu",
+                        }
+                    }
+                end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
