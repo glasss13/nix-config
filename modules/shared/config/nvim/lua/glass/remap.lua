@@ -21,12 +21,7 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Toggle hlsearch if it's on, otherwise just do "enter"
-vim.keymap.set("n", "<CR>", function()
-    ---@diagnostic disable-next-line: undefined-field
-    if vim.opt.hlsearch:get() then
-        vim.cmd.nohl()
-        return ""
-    else
-        return "<CR>"
-    end
-end, { expr = true })
+vim.keymap.set("n", "<Esc>", function()
+    vim.cmd.nohl()
+    vim.cmd("redraw!")
+end, { silent = true, noremap = true })
