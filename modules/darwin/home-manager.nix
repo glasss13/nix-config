@@ -39,6 +39,11 @@ in
     # };
   };
 
+  services.sketchybar = {
+    enable = true;
+
+  };
+
   # Enable home-manager
   home-manager = {
     useGlobalPkgs = true;

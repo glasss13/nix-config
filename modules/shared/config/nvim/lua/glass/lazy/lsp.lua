@@ -34,10 +34,16 @@ return {
                         cmd = {
                             "clangd",
                             "--background-index",
+                            "-j=12",
                             "--clang-tidy",
+                            "--clang-tidy-checks=*",
+                            "--suggest-missing-includes",
+                            "--all-scopes-completion",
                             "--cross-file-rename",
                             "--completion-style=detailed",
+                            "--header-insertion-decorators",
                             "--header-insertion=iwyu",
+                            "--pch-storage=memory",
                         }
                     }
                 end,

@@ -1,7 +1,6 @@
 { pkgs }:
 
 with pkgs; [
-
   alacritty
   bat
   btop
@@ -16,9 +15,12 @@ with pkgs; [
   fzf
   go-task
   neofetch
+  ninja
   nodejs_22
   opam
   pandoc
+  poetry
+  python312Full
   ripgrep
   rustup
   texliveFull

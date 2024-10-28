@@ -14,13 +14,14 @@ _:
   "zwift"
 
   "alt-tab"
-  "raycast"
   "notion"
   "notion-calendar"
   "obsidian"
-  "shottr"
-  "topnotch"
   "postman"
+  "raycast"
+  "shottr"
+  "tailscale"
+  "topnotch"
 
   "arc"
   "brave-browser"
