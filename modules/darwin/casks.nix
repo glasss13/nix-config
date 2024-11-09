@@ -7,16 +7,16 @@ _:
   "beekeeper-studio"
 
   "discord"
-  "garmin-express"
+  # "garmin-express"
   "slack"
-  "whatsapp"
+  # "whatsapp"
   "zoom"
-  "zwift"
+  # "zwift"
 
   "alt-tab"
-  "notion"
+  # "notion"
   "notion-calendar"
-  "obsidian"
+  # "obsidian"
   "postman"
   "raycast"
   "shottr"
@@ -25,4 +25,5 @@ _:
 
   "arc"
   "brave-browser"
+  # "nikitabobko/tap/aerospace"
 ]

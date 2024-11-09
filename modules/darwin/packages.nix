@@ -6,4 +6,5 @@ shared-packages ++ [
   hidden-bar
   rectangle
   stats
+  cocoapods
 ]

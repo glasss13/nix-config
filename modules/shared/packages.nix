@@ -1,6 +1,7 @@
 { pkgs }:
 
 with pkgs; [
+  # nodejs_22
   alacritty
   bat
   btop
@@ -16,7 +17,6 @@ with pkgs; [
   go-task
   neofetch
   ninja
-  nodejs_22
   opam
   pandoc
   poetry

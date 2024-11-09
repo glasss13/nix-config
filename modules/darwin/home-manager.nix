@@ -20,6 +20,7 @@ in
     casks = pkgs.callPackage ./casks.nix { };
     brews = [
       "mysql"
+      "node"
     ];
     onActivation.cleanup = "uninstall";
 
@@ -39,10 +40,24 @@ in
     # };
   };
 
-  services.sketchybar = {
-    enable = true;
-
-  };
+  # services.sketchybar = {
+  #   enable = true;
+  #   package = pkgs.sketchybar;
+  #
+  #   extraPackages = with pkgs; [
+  #     coreutils
+  #     curl
+  #     gh
+  #     gnugrep
+  #     gnused
+  #     jq
+  #     lua5_4_compat
+  #     wttrbar
+  #     # pkgs.${namespace}.sketchyhelper
+  #     # pkgs.${namespace}.dynamic-island-helper
+  #   ];
+  #
+  # };
 
   # Enable home-manager
   home-manager = {

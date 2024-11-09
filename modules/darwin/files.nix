@@ -6,8 +6,9 @@ let
   xdg_stateHome = "${homeDirectory}/.local/state";
 in
 {
-  "${xdg_configHome}/sketchybar" = {
-    source = ./config/sketchybar;
-    recursive = true;
-  };
+  # "${xdg_configHome}/sketchybar" = {
+  #   source = ./config/sketchybar;
+  #   recursive = true;
+  #   executable = true;
+  # };
 }

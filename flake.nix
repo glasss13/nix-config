@@ -49,34 +49,37 @@
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
             {
-              nix-homebrew = {
-                enable = true;
-                inherit user;
-                taps = {
-                  "homebrew/homebrew-core" = homebrew-core;
-                  "homebrew/homebrew-cask" = homebrew-cask;
-                  "homebrew/homebrew-bundle" = homebrew-bundle;
+              nix-homebrew =
+                {
+                  enable = true;
+                  inherit user;
+                  taps = {
+                    "homebrew/homebrew-core" = homebrew-core;
+                    "homebrew/homebrew-cask" = homebrew-cask;
+                    "homebrew/homebrew-bundle" = homebrew-bundle;
+                  };
+                  autoMigrate = true;
                 };
-                autoMigrate = true;
-              };
             }
             (import ./hosts/darwin { inherit homeDirectory stateVersion user; })
           ];
         }
       );
 
-      homeConfigurations = nixpkgs.lib.genAttrs linuxSystems (system:
-        let
-          homeDirectory = "/home/${user}";
-        in
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+      homeConfigurations = nixpkgs.lib.genAttrs
+        linuxSystems
+        (system:
+          let
+            homeDirectory = "/home/${user}";
+          in
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.${system};
 
-          modules = [
-            (import ./hosts/linux { inherit homeDirectory stateVersion user; })
-          ];
-        }
-      );
+            modules = [
+              (import ./hosts/linux { inherit homeDirectory stateVersion user; })
+            ];
+          }
+        );
     };
 
   inputs = {
