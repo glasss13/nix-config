@@ -24,6 +24,7 @@ with pkgs; [
   python312Full
   ripgrep
   rustup
+  sesh
   texliveFull
   tmux
   tree

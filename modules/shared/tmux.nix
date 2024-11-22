@@ -3,9 +3,9 @@
 {
   enable = true;
   plugins = with pkgs.tmuxPlugins; [
+    onedark-theme
     sensible
     vim-tmux-navigator
-    onedark-theme
   ];
   terminal = "screen-256color";
   prefix = "C-a";
