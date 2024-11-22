@@ -13,4 +13,8 @@ in
   "${homeDirectory}/.zshrc" = {
     source = ./config/zsh/.zshrc;
   };
+  "${xdg_configHome}/sesh" = {
+    source = ./config/sesh;
+    recursive = true;
+  };
 }

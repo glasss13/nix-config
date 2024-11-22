@@ -1,0 +1,4 @@
+[[session]]
+name = "Circa"
+path = "~/source/Circa"
+startup_command = "tmux new-window && cd sleep_app_frontend/"
