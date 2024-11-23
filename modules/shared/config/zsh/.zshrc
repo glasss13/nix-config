@@ -57,7 +57,11 @@ alias vim="nvim"
 # alias s=""
 
 s() {
-    sesh connect $(sesh list -i | fzf --bind "ctrl-d:reload(tmux kill-session -t{2} && sesh list -i)" --ansi --height 40% --layout reverse --border --preview "bash -c 'if [ {1} = '' ]; then tmux capture-pane -ep -t {2}; else eza -1 --color=always {2}; fi'" | awk '{print substr($0, index($0,$2))}')
+    if [ $# -eq 0 ]; then
+        sesh connect $(sesh list -i | fzf --bind "ctrl-d:reload(tmux kill-session -t{2} && sesh list -i)" --ansi --height 40% --layout reverse --border --preview "bash -c 'if [ {1} = '' ]; then tmux capture-pane -ep -t {2}; else eza -1 --color=always {2}; fi'" | awk '{print substr($0, index($0,$2))}')
+    else
+        sesh connect $1
+    fi
 }
 
 # macos only
