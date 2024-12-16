@@ -32,6 +32,3 @@ vim.g.mapleader = " "
 vim.opt.inccommand = "split"
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
-
--- Don't add a comment with "o"
-vim.opt.formatoptions:remove "o"

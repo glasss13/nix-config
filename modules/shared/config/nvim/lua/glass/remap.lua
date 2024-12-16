@@ -20,6 +20,10 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- Don't extend comment with "o"
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
 -- Toggle hlsearch if it's on, otherwise just do "enter"
 vim.keymap.set("n", "<Esc>", function()
     vim.cmd.nohl()
