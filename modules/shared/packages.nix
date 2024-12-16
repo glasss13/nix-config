@@ -16,6 +16,7 @@ with pkgs; [
   fzf
   go
   go-task
+  lazygit
   neofetch
   ninja
   opam
