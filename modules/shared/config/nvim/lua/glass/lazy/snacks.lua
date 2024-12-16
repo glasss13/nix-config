@@ -18,6 +18,13 @@ return {
                 height = 0.6,
             },
         },
+        lazygit = {
+            win = {
+                style = "lazygit",
+                width = 0.9,
+                height = 0.9,
+            },
+        },
     },
 
     keys = {
