@@ -7,41 +7,27 @@ return {
     },
     config = function()
         local lsp_servers = {
-            lua_ls = {},
-            rust_analyzer = {},
-            ts_ls = {},
-            clangd = {},
-            gopls = {},
-            pylsp = {},
-            rnix = {},
+            "lua_ls",
+            "rust_analyzer",
+            "ts_ls",
+            "clangd",
+            "gopls",
+            "pylsp",
+            "rnix",
         }
 
-        local ensure_installed = {}
-        for server, _ in pairs(lsp_servers) do
-            table.insert(ensure_installed, server)
+        local server_conf = {}
+        for _, name in ipairs(lsp_servers) do
+            server_conf[name] = {}
         end
 
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = ensure_installed,
+            ensure_installed = lsp_servers,
             automatic_installation = true,
         })
 
-
-        local lspconfig = require('lspconfig')
-
-        lspconfig["lua_ls"].setup({
-            settings = {
-                Lua = {
-                    runtime = { version = "Lua 5.1" },
-                    diagnostics = {
-                        globals = { "vim" }
-                    }
-                }
-            }
-        })
-
-        lspconfig["clangd"].setup({
+        server_conf["clangd"] = {
             cmd = {
                 "clangd",
                 "--background-index",
@@ -55,18 +41,30 @@ return {
                 "--header-insertion-decorators",
                 "--header-insertion=iwyu",
                 "--pch-storage=memory",
+                "--function-arg-placeholders=false",
             },
             init_options = {
                 clangdFileStatus = true,
-                usePlaceholders = true,
+                usePlaceholders = false,
                 completeUnimported = true,
                 semanticHighlighting = true,
             },
-        })
+        }
 
-        for server, config in pairs(lsp_servers) do
-            -- passing config.capabilities to blink.cmp merges with the capabilities in your
-            -- `opts[server].capabilities, if you've defined it
+        server_conf["lua_ls"] = {
+            settings = {
+                Lua = {
+                    runtime = { version = "Lua 5.1" },
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+        }
+
+
+        local lspconfig = require('lspconfig')
+        for server, config in pairs(server_conf) do
             config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
             lspconfig[server].setup(config)
         end
