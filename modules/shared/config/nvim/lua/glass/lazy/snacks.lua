@@ -33,8 +33,7 @@ return {
         { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
         { "<leader>gg", function() Snacks.lazygit() end,          desc = "Lazygit" },
         { "<leader>gl", function() Snacks.lazygit.log() end,      desc = "Lazygit Log (cwd)" },
-        { "<c-/>",      function() Snacks.terminal() end,         desc = "Toggle Terminal" },
-        { "<c-_>",      function() Snacks.terminal() end,         desc = "which_key_ignore" },
+        { "<c-t>",      function() Snacks.terminal() end,         desc = "Toggle Terminal" },
     },
 
 }
