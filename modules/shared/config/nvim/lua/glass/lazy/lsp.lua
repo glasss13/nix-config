@@ -10,7 +10,6 @@ return {
             "lua_ls",
             "rust_analyzer",
             "ts_ls",
-            "clangd",
             "gopls",
             "pylsp",
             "rnix",
@@ -24,7 +23,7 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = lsp_servers,
-            automatic_installation = true,
+            automatic_installation = false,
         })
 
         server_conf["clangd"] = {
@@ -33,15 +32,11 @@ return {
                 "--background-index",
                 "-j=12",
                 "--clang-tidy",
-                "--clang-tidy-checks=*",
-                "--suggest-missing-includes",
                 "--all-scopes-completion",
-                "--cross-file-rename",
                 "--completion-style=detailed",
                 "--header-insertion-decorators",
                 "--header-insertion=iwyu",
                 "--pch-storage=memory",
-                "--function-arg-placeholders=false",
             },
             init_options = {
                 clangdFileStatus = true,
