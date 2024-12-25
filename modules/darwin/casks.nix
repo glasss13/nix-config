@@ -16,7 +16,7 @@ _:
   "alt-tab"
   # "notion"
   "notion-calendar"
-  # "obsidian"
+  "obsidian"
   "postman"
   "raycast"
   "shottr"
