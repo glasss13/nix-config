@@ -3,9 +3,11 @@
 {
   enable = true;
   settings = {
-    shell = {
-      program = "/bin/zsh";
-      args = [ "-l" ];
+    terminal = {
+      shell = {
+        program = "/bin/zsh";
+        args = [ "-l" ];
+      };
     };
     cursor = {
       style = "Block";
