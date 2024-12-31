@@ -22,12 +22,11 @@ with pkgs; [
   opam
   pandoc
   poetry
-  python312Full
+  uv
   ripgrep
   rustup
   sesh
   texliveFull
-  tmux
   tree
   wget
   zip

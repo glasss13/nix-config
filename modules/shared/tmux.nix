@@ -25,6 +25,9 @@
     set-option -g renumber-windows on
     set-option -g status-position top
 
+    # tmux-sensible sets this, but we don't need it anymore
+    set-option -g default-command "" 
+
     # -----------------------------------------------------------------------------
     # Key bindings
     # -----------------------------------------------------------------------------
