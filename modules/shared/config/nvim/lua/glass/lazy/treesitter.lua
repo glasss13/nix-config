@@ -14,7 +14,6 @@ return {
                 "http",
                 "javascript",
                 "json",
-                "latex",
                 "lua",
                 "python",
                 "rust",
