@@ -22,12 +22,12 @@ with pkgs; [
   opam
   pandoc
   poetry
-  uv
   ripgrep
   rustup
   sesh
   texliveFull
   tree
+  uv
   wget
   zip
   zoxide

@@ -6,12 +6,15 @@ _:
   "jetbrains-toolbox"
   "beekeeper-studio"
 
+  "rstudio"
+  "r"
+
   "discord"
   # "garmin-express"
   "slack"
   # "whatsapp"
   "zoom"
-  # "zwift"
+  "zwift"
 
   "alt-tab"
   # "notion"

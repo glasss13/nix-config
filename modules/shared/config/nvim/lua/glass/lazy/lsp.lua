@@ -31,7 +31,7 @@ return {
                 "clangd",
                 "--background-index",
                 "-j=12",
-                "--clang-tidy",
+                -- "--clang-tidy",
                 "--all-scopes-completion",
                 "--completion-style=detailed",
                 "--header-insertion-decorators",
