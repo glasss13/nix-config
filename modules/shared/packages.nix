@@ -16,6 +16,7 @@ with pkgs; [
   fzf
   go
   go-task
+  gtypist
   lazygit
   neofetch
   ninja
@@ -29,6 +30,7 @@ with pkgs; [
   tree
   uv
   wget
+  zig
   zip
   zoxide
   zsh

@@ -50,6 +50,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
 
+alias grep="rg"
 alias ls="eza -lb --icons --git --git-repos-no-status"
 alias la="eza -lab --icons --git --git-repos-no-status"
 alias cat="bat"

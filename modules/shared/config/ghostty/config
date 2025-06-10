@@ -1,0 +1,25 @@
+font-family = FiraCode Nerd Font Mono
+font-size = 14
+
+bold-is-bright = true
+
+background = #282b33
+foreground = #c5cfdf
+
+palette = 0=#3f4350
+palette = 1=#df5460
+palette = 2=#a4e174
+palette = 3=#d08f51
+palette = 4=#51adf8
+palette = 5=#cb7ed9
+palette = 6=#5ecddd
+palette = 7=#babfc9
+
+palette = 8=#707681
+palette = 9=#de5460
+palette = 10=#a3e174
+palette = 11=#d08f51
+palette = 12=#51adf8
+palette = 13=#cb7ed9
+palette = 14=#5ecddc
+palette = 15=#fefefe

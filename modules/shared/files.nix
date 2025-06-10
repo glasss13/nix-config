@@ -17,4 +17,8 @@ in
     source = ./config/sesh;
     recursive = true;
   };
+  "${xdg_configHome}/ghostty" = {
+    source = ./config/ghostty;
+    # recursive = true;
+  };
 }

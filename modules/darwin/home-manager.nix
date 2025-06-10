@@ -23,6 +23,7 @@ in
       "node"
     ];
     onActivation.cleanup = "uninstall";
+    onActivation.autoUpdate = true;
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
