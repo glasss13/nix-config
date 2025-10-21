@@ -11,7 +11,7 @@ return {
             "rust_analyzer",
             "ts_ls",
             "gopls",
-            "pylsp",
+            "basedpyright",
             "rnix",
         }
 
@@ -58,10 +58,9 @@ return {
         }
 
 
-        local lspconfig = require('lspconfig')
         for server, config in pairs(server_conf) do
             config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-            lspconfig[server].setup(config)
+            vim.lsp.enable(server, config)
         end
     end
 }
