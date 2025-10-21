@@ -23,6 +23,7 @@ _:
   "tailscale"
   "topnotch"
   "visual-studio-code"
+  "wireshark"
   "zen"
   "zoom"
   "zwift"

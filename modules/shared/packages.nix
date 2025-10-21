@@ -14,9 +14,11 @@ with pkgs; [
   ffmpeg
   fira-code-nerdfont
   fzf
+  gh
   go
   go-task
   gtypist
+  jq
   lazygit
   neofetch
   ninja
