@@ -70,6 +70,10 @@
           specialArgs = inputs;
           modules = [
             home-manager.darwinModules.home-manager
+	{
+	      ids.gids.nixbld = 350;
+	}
+
             # nix-homebrew.darwinModules.nix-homebrew
             # {
             #   nix-homebrew =

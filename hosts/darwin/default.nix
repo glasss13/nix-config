@@ -9,21 +9,22 @@
   ];
 
   # Setup user, packages, programs
-  nix = {
-    package = pkgs.nix;
-    settings.trusted-users = [ "@admin" "${user}" ];
-
-    gc = {
-      automatic = true;
-      interval = { Weekday = 0; Hour = 2; Minute = 0; };
-      options = "--delete-older-than 30d";
-    };
-
-    # Turn this on to make command line easier
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
+  nix.enable = false;
+  #  nix = {
+  #    package = pkgs.nix;
+  #    settings.trusted-users = [ "@admin" "${user}" ];
+  #
+  #    gc = {
+  #      automatic = true;
+  #      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+  #      options = "--delete-older-than 30d";
+  #    };
+  #
+  #    # Turn this on to make command line easier
+  #    extraOptions = ''
+  #      experimental-features = nix-command flakes
+  #    '';
+  #  };
 
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
@@ -42,6 +43,7 @@
 
         # 120, 90, 60, 30, 12, 6, 2
         KeyRepeat = 2;
+        AppleInterfaceStyle = "Dark";
 
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
