@@ -11,7 +11,7 @@ with pkgs; [
   eza
   fd
   ffmpeg
-  fira-code-nerdfont
+  nerd-fonts.fira-code
   fzf
   gh
   go
@@ -19,7 +19,7 @@ with pkgs; [
   gtypist
   jq
   lazygit
-  neofetch
+  fastfetch
   ninja
   nodejs_22
   opam

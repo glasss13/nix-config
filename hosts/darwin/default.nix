@@ -36,6 +36,7 @@
 
   system = {
     stateVersion = 4;
+    primaryUser = user;
 
     defaults = {
       NSGlobalDomain = {

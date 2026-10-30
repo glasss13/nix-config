@@ -2,16 +2,17 @@
 
 {
   enable = true;
-  userName = name;
-  userEmail = email;
-  delta.enable = true;
   lfs = {
     enable = true;
   };
-  aliases = {
-    lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%D%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-  };
-  extraConfig = {
+  settings = {
+    user = {
+      name = name;
+      email = email;
+    };
+    alias = {
+      lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%D%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+    };
     core = {
       editor = "nvim";
     };
