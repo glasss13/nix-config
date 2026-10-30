@@ -84,3 +84,9 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 
 export RSTUDIO_WHICH_R=$(which R)
+export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
+
+# Rex: keep its bundled `rex` CLI first on PATH (only set inside Rex terminals)
+if [ -n "$REX_BIN_DIR" ]; then
+    export PATH="$REX_BIN_DIR:$PATH"
+fi

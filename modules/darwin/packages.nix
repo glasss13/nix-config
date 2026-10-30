@@ -7,4 +7,5 @@ shared-packages ++ [
   rectangle
   stats
   cocoapods
+  sshuttle
 ]

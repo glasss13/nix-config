@@ -23,6 +23,8 @@ _:
   "rstudio"
   "shottr"
   "slack"
+  "spotify"
+  "t3-code"
   "tailscale-app"
   "topnotch"
   "visual-studio-code"
