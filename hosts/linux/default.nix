@@ -9,6 +9,8 @@
   ];
 
   nix = {
-    package = pkgs.nix;
+    # Use the installed Nix during activation, including Determinate Nix
+    # on hosts whose nix.conf contains Determinate-specific settings.
+    package = null;
   };
 }
