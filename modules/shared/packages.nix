@@ -8,6 +8,7 @@ with pkgs; [
   cmake
   conan
   delta
+  elan
   eza
   fd
   ffmpeg
