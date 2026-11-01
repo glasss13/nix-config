@@ -19,6 +19,7 @@
 
     username = {
       disabled = false;
+      detect_env_vars = [ "REX_SESSION" ];
       style_user = "green bold dimmed";
       style_root = "black bold";
       format = "[$user]($style) ";
