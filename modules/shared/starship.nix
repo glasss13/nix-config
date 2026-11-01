@@ -26,7 +26,13 @@
 
     hostname = {
       disabled = false;
-      ssh_only = true;
+      ssh_only = false;
+      detect_env_vars = [
+        "SSH_CONNECTION"
+        "SSH_CLIENT"
+        "SSH_TTY"
+        "REX_SESSION"
+      ];
       format = "on [$hostname](red) ";
     };
 
