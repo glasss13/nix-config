@@ -22,8 +22,14 @@ case "$SYSTEM" in
     ;;
 esac
 
+# These two hosts opt in to personal Rex; other machines keep their profile.
+case "$SYSTEM:$(hostname -s)" in
+  x86_64:black) FLAKE_TARGET="black" ;;
+  x86_64:scholes) FLAKE_TARGET="scholes" ;;
+esac
+
 echo -e "${YELLOW}Starting...${NC}"
 
-nix run .#homeConfigurations.$FLAKE_TARGET.activationPackage $@
+nix run ".#homeConfigurations.$FLAKE_TARGET.activationPackage" "$@"
 
 echo -e "${GREEN}Switch to new generation complete!${NC}"

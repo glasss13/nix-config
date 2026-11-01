@@ -1,7 +1,7 @@
 {
   description = "Max Glass Configurations";
 
-  outputs = { self, darwin, home-manager, nixpkgs, disko } @inputs:
+  outputs = { self, darwin, home-manager, nixpkgs, disko, rex } @inputs:
     let
       user = "glass";
       stateVersion = "25.05";
@@ -28,6 +28,19 @@
             '';
 
           };
+        };
+      mkRexHome = hostname:
+        let
+          user = "mglass";
+          homeDirectory = "/home/${user}";
+        in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [
+            (import ./hosts/linux { inherit homeDirectory stateVersion user; })
+            rex.homeManagerModules.default
+            (import ./modules/linux/rex.nix { inherit hostname; })
+          ];
         };
       mkApp = scriptName: system: {
         type = "app";
@@ -106,10 +119,14 @@
               (import ./hosts/linux { inherit homeDirectory stateVersion user; })
             ];
           }
-        );
+        ) // nixpkgs.lib.genAttrs [ "black" "scholes" ] mkRexHome;
     };
 
   inputs = {
+    rex = {
+      url = "https://pkgs.superlogical.com/rex/nix/preview.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
