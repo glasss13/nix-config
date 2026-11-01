@@ -29,19 +29,6 @@
 
           };
         };
-      mkRexHome = hostname:
-        let
-          user = "mglass";
-          homeDirectory = "/home/${user}";
-        in
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = [
-            (import ./hosts/linux { inherit homeDirectory stateVersion user; })
-            rex.homeManagerModules.default
-            (import ./modules/linux/rex.nix { inherit hostname; })
-          ];
-        };
       mkApp = scriptName: system: {
         type = "app";
         program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
@@ -110,6 +97,7 @@
         linuxSystems
         (system:
           let
+            user = "mglass";
             homeDirectory = "/home/${user}";
           in
           home-manager.lib.homeManagerConfiguration {
@@ -117,9 +105,11 @@
 
             modules = [
               (import ./hosts/linux { inherit homeDirectory stateVersion user; })
+              rex.homeManagerModules.default
+              ./modules/linux/rex.nix
             ];
           }
-        ) // nixpkgs.lib.genAttrs [ "black" "scholes" ] mkRexHome;
+        );
     };
 
   inputs = {

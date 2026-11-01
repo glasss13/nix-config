@@ -14,7 +14,17 @@ in
     inherit stateVersion;
   };
 
-  programs = shared-programs // { };
+  programs = shared-programs // {
+    ssh = {
+      enable = true;
+      enableDefaultConfig = false;
+      settings.kalshi-aws = {
+        HostName = "18.116.213.64";
+        User = "ec2-user";
+        ForwardAgent = true;
+      };
+    };
+  };
 
 }
 
