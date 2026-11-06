@@ -83,7 +83,7 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 
-export RSTUDIO_WHICH_R=$(which R)
+export DOCKER_HOST=unix:///run/user/1007/docker.sock
 export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 
 # Rex: keep its bundled `rex` CLI first on PATH (only set inside Rex terminals)

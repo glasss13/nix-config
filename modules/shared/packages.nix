@@ -31,6 +31,7 @@ with pkgs; [
   sesh
   texliveFull
   tree
+  tree-sitter
   uv
   wget
   zig
