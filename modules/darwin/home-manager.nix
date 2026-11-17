@@ -17,6 +17,11 @@ in
 
   homebrew = {
     enable = true;
+    taps = [{
+      name = "glasss13/alttab2";
+      clone_target = "https://github.com/glasss13/alttab2.git";
+      trusted = true;
+    }];
     casks = pkgs.callPackage ./casks.nix { };
     brews = [
       "mysql"

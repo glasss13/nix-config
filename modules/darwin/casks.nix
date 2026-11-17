@@ -1,7 +1,7 @@
 _:
 
 [
-  "alt-tab"
+  "glasss13/alttab2/alttab2"
   "anki"
   "arc"
   "beekeeper-studio"
