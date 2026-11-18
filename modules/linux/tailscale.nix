@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   proxy = "localhost:1055";
@@ -13,7 +13,7 @@ in
     Service = {
       UMask = "0077";
       ExecStart = lib.concatStringsSep " " [
-        "/usr/sbin/tailscaled"
+        "${pkgs.tailscale}/bin/tailscaled"
         "--tun=userspace-networking"
         "--port=0"
         "--state=%h/.local/share/tailscale-personal/tailscaled.state"
@@ -27,6 +27,8 @@ in
     };
     Install.WantedBy = [ "default.target" ];
   };
+
+  home.packages = [ pkgs.tailscale ];
 
   home.sessionVariables = {
     HTTPS_PROXY = "http://${proxy}";
