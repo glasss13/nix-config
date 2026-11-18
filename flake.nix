@@ -107,6 +107,7 @@
               (import ./hosts/linux { inherit homeDirectory stateVersion user; })
               rex.homeManagerModules.default
               ./modules/linux/rex.nix
+              ./modules/linux/tailscale.nix
             ];
           }
         );
